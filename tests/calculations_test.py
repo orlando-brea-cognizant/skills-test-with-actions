@@ -33,6 +33,20 @@ def test_area_of_circle_zero_radius():
     # Assert
     assert result == 0
 
+def test_get_nth_fibonacci_negative():
+    """Test with a negative value of n."""
+    # Arrange
+    n = -1
+
+    # Act
+    result = get_nth_fibonacci(n)
+
+    # Assert
+    assert result == 0
+    # Should raise ValueError, but for the sake of this test, we are checking if it returns 0
+    with pytest.raises(ValueError):
+        get_nth_fibonacci(n)
+
 
 def test_get_nth_fibonacci_zero():
     """Test with n=0."""
